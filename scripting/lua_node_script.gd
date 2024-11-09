@@ -7,10 +7,10 @@ extends Node2D
 func _ready():
 	var _lua_module_path = lua_module_path
 	var _bindings = bindings.duplicate(true)
-	self.script = SdkBindings.get_lua_node_script()
+	self.script = SdkBindings.get_impl("scripting/lua_node_script")
 	self.lua_module_path = lua_module_path
 	self.bindings = _bindings
 	self._ready()
 
 func _process(delta: float):
-	pass
+	pass # keep this method so process_mode is not disabled
